@@ -1,19 +1,26 @@
 import * as React from 'react'
 import ListItem from './ListItem'
-import { User } from '../interfaces'
+import { Beer } from '../interfaces'
 
 type Props = {
-  items: User[]
+  items: Beer[]
 }
 
 const List: React.FunctionComponent<Props> = ({ items }) => (
-  <ul>
+  <div className="content__list">
     {items.map(item => (
-      <li key={item.id}>
+      <div key={item.id}>
         <ListItem data={item} />
-      </li>
+      </div>
     ))}
-  </ul>
+    <style jsx>{`
+          .content__list {
+            display: flex;
+            flex-wrap: wrap;
+           }
+        }
+      `}</style>
+  </div>
 )
 
 export default List

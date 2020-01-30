@@ -1,17 +1,17 @@
 import * as React from 'react'
 
-import { User } from '../interfaces'
+import { Beer } from '../interfaces'
 
 type ListDetailProps = {
-  item: User
+  item: Beer
 }
 
 const ListDetail: React.FunctionComponent<ListDetailProps> = ({
-  item: user,
+  item: beer,
 }) => (
   <div>
-    <h1>Detail for {user.name}</h1>
-    <p>ID: {user.id}</p>
+    <h1>{beer.name +`|` + beer.tagline}</h1>
+    <img src={beer.image_url}/>
   </div>
 )
 

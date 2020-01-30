@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { NextPageContext } from 'next'
 
-import { User } from '../../interfaces'
+import { Beer } from '../../interfaces'
 import Layout from '../../components/Layout'
 import ListDetail from '../../components/ListDetail'
 import { sampleFetchWrapper } from '../../utils/sample-api'
 
 type Props = {
-  item?: User
+  item?: Beer
   errors?: string
 }
 
@@ -15,9 +15,11 @@ class InitialPropsDetail extends React.Component<Props> {
   static getInitialProps = async ({ query }: NextPageContext) => {
     try {
       const { id } = query
-      const item = await sampleFetchWrapper(
-        `http://localhost:3000/api/users/${Array.isArray(id) ? id[0] : id}`
-      )
+      const data = await sampleFetchWrapper(
+        `https://api.punkapi.com/v2/beers/${id}`
+      );
+      const item = Array.isArray(data) ? data[0] : data;
+      console.log(item)
       return { item }
     } catch (err) {
       return { errors: err.message }
@@ -26,7 +28,6 @@ class InitialPropsDetail extends React.Component<Props> {
 
   render() {
     const { item, errors } = this.props
-
     if (errors) {
       return (
         <Layout title={`Error | Next.js + TypeScript Example`}>
@@ -40,7 +41,7 @@ class InitialPropsDetail extends React.Component<Props> {
     return (
       <Layout
         title={`${
-          item ? item.name : 'User Detail'
+          item ? item.name : 'Beer Detail'
         } | Next.js + TypeScript Example`}
       >
         {item && <ListDetail item={item} />}
