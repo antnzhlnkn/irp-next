@@ -10,7 +10,7 @@ type Props = {
 const ListItem: React.FunctionComponent<Props> = ({data}) => (
     <Link href="/beers/[id]" as={`/beers/${data.id}`}>
         <div className="beer-card">
-            <div className="beer-card_title">{data.name}</div>
+            <div className="beer-card_title" title={data.name}>{data.name}</div>
             <div className="beer-card__image-wrapper">
                 <img className="beer-card__image" src={data.image_url} alt={data.name}/>
             </div>
