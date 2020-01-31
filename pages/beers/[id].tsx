@@ -19,7 +19,6 @@ class InitialPropsDetail extends React.Component<Props> {
         `https://api.punkapi.com/v2/beers/${id}`
       );
       const item = Array.isArray(data) ? data[0] : data;
-      console.log(item)
       return { item }
     } catch (err) {
       return { errors: err.message }
