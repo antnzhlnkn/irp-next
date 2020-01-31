@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "deploy": "yarn install & yarn build"
+    "deploy": "yarn install && yarn build"
   },
   "dependencies": {
     "isomorphic-unfetch": "3.0.0",
