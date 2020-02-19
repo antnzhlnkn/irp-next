@@ -2,6 +2,7 @@ import * as React from 'react'
 import BeerCardAbout from "./BeerCardAbout/BeerCardAbout";
 import BeerOther from "./BeerCardAbout/BeerOther";
 import BeerDescription from "./BeerCardAbout/BeerDescription";
+import BeerTitle from "./BeerCardAbout/BeerTitle";
 
 import {Beer} from '../interfaces'
 
@@ -14,10 +15,7 @@ const ListDetail: React.FunctionComponent<ListDetailProps> = ({
 }) => (
     <div className="content">
         <div className="container__center">
-            <div className="header__link-container">
-                <div className="content__title">{beer.name}</div>
-                <div className="content__title content__title_border">{beer.tagline}</div>
-            </div>
+            <BeerTitle data={beer}/>
             <div className="beer-about">
                 <BeerCardAbout data={beer}/>
                 <BeerDescription data={beer}/>
