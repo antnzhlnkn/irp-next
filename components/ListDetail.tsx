@@ -1,4 +1,5 @@
 import * as React from 'react'
+import BeerCardAbout from "./BeerCardAbout/BeerCardAbout";
 
 import {Beer} from '../interfaces'
 
@@ -16,14 +17,7 @@ const ListDetail: React.FunctionComponent<ListDetailProps> = ({
                 <div className="content__title content__title_border">{beer.tagline}</div>
             </div>
             <div className="beer-about">
-                <div className="beer-card">
-                    <div className="beer-card__abv-container">
-                        <div className="beer-card__abv">{beer.abv}%</div>
-                    </div>
-                    <div className="beer-card__image-wrapper">
-                        <img className="beer-card__image" src={beer.image_url} alt="beer name"/>
-                    </div>
-                </div>
+                <BeerCardAbout data={beer}/>
                 <div className="beer-description">
                     <div className="beer-description__title">{beer.description}</div>
                     <hr/>
@@ -66,40 +60,7 @@ const ListDetail: React.FunctionComponent<ListDetailProps> = ({
                 content: '';
                 border-left: 3px solid #000000;
             }
-            
-            .beer-card {
-                height: 350px;
-                width: 225px;
-                background: #FFFFFF;
-                border-radius: 4px;
-                margin: 10px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                position: relative;
-            }
-            
-            .beer-card__image {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                max-height: 300px;
-            }
-            
-            .beer-card__abv {
-                width: 70px;
-                height: 70px;
-                border-radius: 50%;
-                background-color: #000000;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-family: Exo, sans-serif;
-                color: #FFFFFF;
-                font-size: 16px;
-                line-height: 21px;
-            }
-            
+                      
             .beer-about {
                 display: flex;
                 flex-wrap: wrap;
@@ -148,13 +109,7 @@ const ListDetail: React.FunctionComponent<ListDetailProps> = ({
                 flex-basis: 100%;
             }
             
-            .beer-card__abv-container {
-                display: flex;
-                justify-content: flex-end;
-                position: absolute;
-                top: 8px;
-                right: 8px;
-            }
+
             
             @media screen and (max-width: 812px) {
                 .content__title, .beer-about, .beer-description, .beer-other {

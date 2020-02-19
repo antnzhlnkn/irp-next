@@ -7,9 +7,9 @@ type Props = {
 }
 
 const Layout: React.FunctionComponent<Props> = ({
-                                                    children,
-                                                    title = 'IPR',
-                                                }) => (
+children,
+title = 'IPR',
+}) => (
     <div>
         <Head>
             <title>{title}</title>
@@ -114,6 +114,6 @@ const Layout: React.FunctionComponent<Props> = ({
         }
       `}</style>
     </div>
-)
+);
 
 export default Layout
