@@ -7,8 +7,10 @@ type Props = {
 }
 
 const BeerOther: React.FunctionComponent<Props> = ({data}) => (
-    <div>
-        <div className="beer-other">{data.description}</div>
+    <div className="beer-other-container">
+        <div className="beer-other">
+            {data.food_pairing.map((item) => <li>{item}</li>)}
+        </div>
         <style jsx>{`
             .beer-other {
                 margin: 10px;
@@ -16,6 +18,8 @@ const BeerOther: React.FunctionComponent<Props> = ({data}) => (
                 min-height: 200px;
                 background: #FFFFFF;
                 border-radius: 3px;
+            }
+            .beer-other-container {
                 flex-basis: 100%;
             }
         }

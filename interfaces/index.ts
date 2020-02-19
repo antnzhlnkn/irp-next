@@ -12,4 +12,5 @@ export type Beer = {
   image_url: string
   abv: number
   brewers_tips: string
+  food_pairing: string[]
 }
