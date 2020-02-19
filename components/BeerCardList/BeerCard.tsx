@@ -24,6 +24,7 @@ const BeerCard: React.FunctionComponent<Props> = ({data}) => (
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+                    cursor: pointer;
                 }
         }
       `}</style>

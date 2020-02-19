@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Link from 'next/link'
-import BeerCard from "./BeerCardList/BeerCard";
+import BeerCard from './BeerCardList/BeerCard'
 
 import {Beer} from '../interfaces'
 
